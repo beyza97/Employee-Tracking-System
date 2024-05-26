@@ -1,4 +1,5 @@
 Start Project
+terminal path is  "...\Employee Tracking\Employee-Tracking-System\proje> "
 -- npm install
 -- npm start or if you wanna start with yarn 
 -- npm install -g yarn 
