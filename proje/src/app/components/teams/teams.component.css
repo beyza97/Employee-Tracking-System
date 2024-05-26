@@ -1,0 +1,36 @@
+.tab-panel{
+    padding: 2rem;
+  }
+  @media (min-width: 768px) {
+    .p-col-12.p-md-6 {
+      flex: 0 0 50%; 
+      max-width: 55%; 
+    }
+  } 
+  ::ng-deep.p-element.p-ripple.p-tabview-nav-link{
+    text-decoration: none;
+    color: #495057c0;
+  }
+  ::ng-deep.p-element.p-ripple.p-tabview-nav-link:hover{
+    text-decoration: none;
+    color: #495057c0;
+  }
+  ::ng-deep .p-tabview-nav-link.p-highlight:hover {
+    color: #007bff !important; 
+  }
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+  }
+  
+  .button-container button {
+    margin-left: 1rem;
+  }
+  
+  .cancel-button {
+    background-color: rgba(200, 60, 60, 0.849);
+    border-color: rgba(200, 60, 60, 0.764);
+  }
+  

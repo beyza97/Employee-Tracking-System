@@ -1,0 +1,67 @@
+<app-header></app-header> 
+<p-toast position="top-right"></p-toast>
+
+<div>
+  <button pButton type="button" label="Add New Course" icon="pi pi-plus" (click)="showModal = true"></button>
+  <p-dialog header="Add New Course" [(visible)]="showModal" [modal]="true" [closable]="false" [styleClass]="'custom-dialog'">
+    <div class="p-fluid">
+      <div class="p-field">
+        <label for="skill">Skill</label>
+        <p-dropdown [options]="skills" [(ngModel)]="selectedSkill" placeholder="Select a skill"></p-dropdown>
+      </div>
+      <div class="p-field">
+        <label for="startDate">Start Date</label>
+        <p-calendar  placeholder="Start Date"></p-calendar>
+      </div>
+      <div class="p-field">
+        <label for="dueDate">Due Date</label>
+        <p-calendar  placeholder="Due Date"></p-calendar>
+      </div>
+      <div class="p-field">
+        <label for="assignedEmployee">Assigned Employee</label>
+        <input type="text" pInputText placeholder="Assigned Employee" />
+      </div>
+      <div class="p-field">
+        <label for="numberOfExams">Number of Exams</label>
+        <input type="number" pInputText placeholder="Number of Exams" />
+      </div>
+    </div>
+    <p-footer>
+      <button pButton type="button" label="Save" icon="pi pi-check" (click)="saveCourse()"></button>
+      <button pButton type="button" label="Cancel" icon="pi pi-times" (click)="showModal = false" style="background-color: rgba(200, 60, 60, 0.849); border-color: rgba(200, 60, 60, 0.764); margin-left: 1rem;"></button>
+    </p-footer>
+  </p-dialog>
+
+</div>
+
+
+<!-- <div class="p-3">
+  <p-table [value]="missions">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Görev No</th>
+        <th>Tür</th>
+        <th>İçerik</th>
+        <th>Atanan Kişi</th>
+        <th>Durum</th>
+        <th>İşlem</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-task>
+      <tr>
+        <td>{{ task.id }}</td>
+        <td>{{ task.type }}</td>
+        <td>{{ task.content }}</td>
+        <td>{{ task.assignedTo }}</td>
+        <td>{{ task.status }}</td>
+        <td>
+          <button pButton *ngIf="task.status == 'Onaylandı'" class="p-button-success button" >Onaylandı</button>
+        </td>
+
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<div class="card">
+  <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+</div> -->

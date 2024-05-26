@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.p-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.p-col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.p-col-12,
+.p-col-6,
+.p-col-3 {
+    padding: 0 15px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    border-color: #007bff;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-content {
+    transition: color 0.3s;
+}
+
+.card:hover .card-content {
+    color: #007bff; 
+}
+
+.card .pi {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: block;
+}
+.card:hover .pi {
+    color: #007bff; 
+}
+.card-content {
+    padding: 10px 0;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-value {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.card-value ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.card-value ul li {
+    margin-bottom: 5px;
+}
+.title-setting{
+    font-size: 30px;
+    font-weight: 600;
+    margin: 2rem;
+    color: #617198;
+    display: flex;
+    justify-content: center;
+}
+.p-chart {
+    max-width: 100%;
+    height: auto;
+    max-height: 10px; 
+  }
+  
+  @media (min-width: 768px) {
+    .p-col-12.p-md-6 {
+      flex: 0 0 50%; 
+      max-width: 35%; 
+  }
+} 
+::ng-deep .p-dialog {
+  width: 30% !important;
+  height: 60% !important;
+}
+
+::ng-deep .p-button {
+  border-radius: 5px;
+}
+
+::ng-deep .p-dialog .p-field label {
+  margin-top: 1rem;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+}
+
+.button-container button {
+  margin-left: 1rem;
+}
+
+.cancel-button {
+  background-color: rgba(200, 60, 60, 0.849);
+  border-color: rgba(200, 60, 60, 0.764);
+}

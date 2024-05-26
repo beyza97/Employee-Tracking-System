@@ -1,0 +1,63 @@
+<h2 class="table-title"*ngIf="salesData">{{salesData.title}}</h2>
+<div *ngIf="salesData">
+  <div>
+    <div class="card fieldset">
+      <p-fieldset>
+        <ng-template pTemplate="header">
+          <div class="description-title">
+            <span><i class="icon-info pi pi-info-circle"></i> Team Information</span>
+          </div>
+        </ng-template>
+        <div class="description-div">
+          <span>Description:</span>
+          <div>
+            <p>{{ salesData.description }}</p>
+          </div>
+        </div>
+        <div class="overall-score">
+          <span>Overall Score:</span>
+          <div class="overall-rating" (mouseover)="showOverallRatingTitle = true" (mouseleave)="showOverallRatingTitle = false">
+            <p-rating [ngModel]="salesData.overall_score" [stars]="5" [cancel]="false" [readonly]="true" class="rating-star"></p-rating>
+            <div class="rating-title" *ngIf="showOverallRatingTitle">Overall score: {{ salesData.overall_score }} / 5</div>
+          </div>
+        </div>
+        <div class="total-employee">
+          <span >Number of Employees in the Team: {{ salesData.total_employee_count }}</span>
+        </div>
+      </p-fieldset>
+    </div>
+  </div>
+  <div class="carousel-div">
+    <span class="employee-header"> Employees in the Team </span>
+    <p-carousel *ngIf="salesData" [value]="salesData.employees" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="10000" [responsiveOptions]="responsiveOptions">
+      <ng-template let-employee pTemplate="item">
+        <div class="employee-card">
+          <div class="employee-column">
+            <i class="pi pi-user employee-icon"></i>
+            <div class="employee-name">{{ employee.name }}</div>
+            <div class="employee-rating" (mouseover)="showRatingTitle = true" (mouseleave)="showRatingTitle = false">
+              <p-rating [ngModel]="employee.current_score" [stars]="5" [cancel]="false" [readonly]="true"></p-rating>
+              <div class="rating-title" *ngIf="showRatingTitle">current score: {{ employee.current_score }} / 5</div>
+            </div>
+          </div>
+          <div class="employee-column">
+            <div class="employee-info">
+              <div class="employee-title"><strong>Title: </strong>{{ employee.title }}</div>
+              <div class="employee-email"><strong>e-mail: </strong>{{ employee.email }}</div>
+            </div>
+
+          </div>
+          <div class="employee-column">
+            <div class="employee-info">
+              <div class="lessons-taken"><strong>Lessons Taken: </strong>{{ employee.lessons_taken }}</div>
+              <div class="skills-label"><strong>Skills Being Developed:</strong></div>
+              <ul>
+                <li class="skills-list" *ngFor="let skill of employee.skills_being_developed">- {{ skill }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>

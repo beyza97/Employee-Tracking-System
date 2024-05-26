@@ -1,0 +1,14 @@
+.card {
+    padding: 2rem;
+    margin: 2rem;
+    max-width: 70%;
+  }
+  .table-title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 2rem;
+    color: #617198;
+    display: flex;
+    justify-content: left;
+  }
+  

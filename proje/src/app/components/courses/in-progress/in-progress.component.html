@@ -1,0 +1,65 @@
+<div class="container">
+  <h2 class="table-title">Status of Courses</h2>
+  <p-table 
+    class="table-courses-css" 
+    #dt
+    [value]="combinedCourses"
+    [globalFilterFields]="['assigned_to','description', 'due_date', 'status', 'title']"
+    selectionMode="multiple"
+    [paginator]="true"
+    [rows]="10"
+    [(selection)]="selectedRowTable"
+    selectionMode="multiple"
+    [filterDelay]="0"
+    [rowHover]="true"
+    [showCurrentPageReport]="true"
+  >
+    <ng-template pTemplate="caption">
+      <div class="table-courses">
+        <p-button class="clear-btn" label="Clear" [outlined]="true" icon="pi pi-filter-slash" (click)="clear(dt)" />
+        <span class="p-input-icon-left ml-auto">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" [(ngModel)]="searchValue"     
+                 #inputText (input)="dt.filterGlobal(inputText.value, 'contains')" placeholder="Search keyword" />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-course>
+      <tr>
+        <th pSortableColumn="assigned_to" class="table-header">Assigned To 
+          <p-sortIcon field="assigned_to" />
+          <p-columnFilter type="text" field="assigned_to" display="menu" />
+        </th>
+        <th pSortableColumn="description">Description 
+          <p-sortIcon field="description" />
+          <p-columnFilter type="text" field="description" display="menu" />
+        </th>
+        <th pSortableColumn="due_date" class="table-header">Due Date 
+          <p-sortIcon field="due_date" />
+        </th>
+        <th pSortableColumn="status" class="table-header">Status 
+          <p-sortIcon field="status" />
+          <p-columnFilter type="status" field="status" display="menu" />
+        </th>
+        <th pSortableColumn="title" class="table-header">Title 
+          <p-sortIcon field="title" />
+          <p-columnFilter type="text" field="title" display="menu" />
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-course let-columns="columns" >
+      <tr>
+        <td>{{ course.assigned_to }}</td>
+        <td>{{ course.description }}</td>
+        <td>{{ course.due_date ? course.due_date : 'N/A' }}</td>
+        <td>
+          <p-tag
+          class="p-tag-btn" 
+          [value]="course.status" 
+          [severity]="getSeverity(course.status)"></p-tag>
+        </td>
+        <td>{{ course.title }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

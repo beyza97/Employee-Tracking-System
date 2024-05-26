@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="container-fluid tab-panel">
+    <div class="row">
+      <div class="col-12">
+        <div class="card inventory-card">
+          <p-tabView styleClass="tabview-custom">
+            <p-tabPanel header="userInfo" class="title-fonts">
+              <ng-template pTemplate="header"  >
+                <span class="table-titles"> Activity Status</span>
+              </ng-template>
+              <app-activity-status></app-activity-status>
+            </p-tabPanel>
+  
+            <p-tabPanel class="title-fonts">
+              <ng-template pTemplate="header" >
+                <span class="table-titles">Courses Status</span>
+              </ng-template>
+              <app-in-progress></app-in-progress>
+            </p-tabPanel>
+  
+            <p-tabPanel class="title-fonts">
+              <ng-template pTemplate="header" >
+                <span class="table-titles">Skills in Development</span>
+              </ng-template>
+              <app-skills-development></app-skills-development>
+            </p-tabPanel>
+          </p-tabView>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <app-footer></app-footer>
+  </div>
+

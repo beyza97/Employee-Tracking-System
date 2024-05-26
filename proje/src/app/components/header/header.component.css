@@ -1,0 +1,97 @@
+.header{
+  display: flex;
+  
+}
+.menu-container {
+  display: flex;
+  margin: 2rem;
+  align-items: center;
+
+}
+
+.footer-logo {
+  margin-right: 10px; 
+}
+
+.logo {
+  height: 100px; 
+  margin-left: 2rem;
+}
+
+.button{
+  font-size: 18px;
+  color: black;
+  padding: 5px;
+}
+
+.flag{
+  width: 60px;
+  height: 50px;
+  margin-right: 2px;
+}
+
+.moon{
+  margin-top: 5px;
+}
+
+.login{
+  margin-right: 5px;
+  color: black;
+  background: #1ebbeb;
+  border-color: #1ebbeb;
+  font-weight: 500;
+
+}
+.login:hover{
+  margin-right: 5px;
+  color: black;
+  background: #1ebbeb;
+  border-color: #1ebbeb;
+  font-weight: 500;
+
+}
+
+.sign-up{
+  color: black;
+  border-color: #21eb1e;
+  font-weight: 500;
+  background: white;
+
+
+}
+
+.button{
+  color: black !important;
+  background: white;
+  border: none !important;
+}
+
+.button:hover{
+  text-decoration: underline;
+  color: #1ebbeb !important;
+  background: white;
+  border: none !important;
+  font-weight: 600;
+}
+
+.buttons{
+  margin : 5px;
+}
+
+::ng-deep.p-menubar{
+  margin: 2rem;
+  .p-menuitem-link {
+    text-decoration: none !important;
+  
+     .p-menuitem-icon {
+      font-size: 17px !important;
+    } 
+    .p-menuitem-text {
+      font-size: 17px !important;
+    }
+  }
+}
+::ng-deep.p-menubar-root-list{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,146 @@
+.employee-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .employee-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .employee-column {
+    flex: 1;
+    padding: 0 10px;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .employee-column:last-child {
+    border-right: none;
+  }
+  
+  .employee-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .employee-icon {
+    font-size: 8rem;
+  }
+  
+  .employee-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .employee-info,
+  .skills-list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ 
+  .employee-title,
+  .employee-email,
+  .lessons-taken,
+  .skills-label  {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+
+  
+  .employee-rating,
+  .overall-rating {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .employee-rating .rating-title,
+  .overall-rating .rating-title {
+    display: none;
+  }
+  
+  .employee-rating:hover .rating-title,
+  .overall-rating:hover .rating-title {
+    display: block;
+    width: 9rem;
+    background-color: rgba(138, 187, 187, 0.613);
+    color: #333;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .overall-score {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .overall-score span,
+  .total-employee span,
+  .description-div span {
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .carousel-div {
+    margin-top: 4rem;
+  }
+  .icon-info{
+    font-size: large;
+    font-weight: 700;
+    margin-left: 1rem;
+  }
+.description-title{
+    line-height: 3rem;
+}
+.employee-header{
+    margin-left: 2rem;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+.fieldset{
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.table-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #617198;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
