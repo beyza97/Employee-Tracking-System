@@ -18,6 +18,8 @@ export class PanelComponent implements OnInit {
   selectedSkill: string = '';
   showEmployeeModal: boolean = false;
   teamOptions: string[] = [];
+  basicData: any;
+  basicOptions: any;
 
   constructor(
     private dataService:DataService,
@@ -34,6 +36,7 @@ export class PanelComponent implements OnInit {
 
         console.log(this.dashboardData);
         this.prepareChartData()
+        this.setupChart();
       },
       error: (error) => {
         console.error("data not read : ", error);
@@ -72,6 +75,52 @@ export class PanelComponent implements OnInit {
           animateScale: true,
           animateRotate: true
       }
+  };
+
+}
+setupChart(){
+  const skillsDev = this.dashboardData.top_skills;
+  const labels = skillsDev.map((activity:any)=>activity.skill)
+  const employees = skillsDev.map((activity:any)=>activity.employees);
+  
+  this.basicData = {
+    labels: labels,
+    datasets: [
+      {
+        label: ' Top Skills',
+        backgroundColor: '#42A5F5',
+        data: employees
+      }
+    ]
+  };
+  
+  this.basicOptions = {
+    plugins: {
+      legend: {
+        labels: {
+          color: '#495057'
+        }
+      }
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: '#495057'
+        },
+        grid: {
+          color: '#ebedef'  
+        }
+      },
+      y: {
+        ticks: {
+          color: '#495057',
+          precision: 0 
+        },
+        grid: {
+          color: '#ebedef'
+        }
+      }
+    }
   };
 }
 }

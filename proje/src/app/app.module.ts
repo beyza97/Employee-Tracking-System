@@ -56,6 +56,7 @@ import { FooterComponent } from './components/footer/footer.component';
     EngineeringComponent,
     MarketingComponent,
     FooterComponent,
+
   ],
   imports: [
     BrowserModule,

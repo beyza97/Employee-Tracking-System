@@ -18,6 +18,10 @@
   ::ng-deep .p-tabview-nav-link.p-highlight:hover {
     color: #007bff !important; 
   }
+  ::ng-deep.p-dialog{
+    height: 40%;
+    width: 40%;
+  }
   .button-container {
     display: flex;
     justify-content: flex-end;

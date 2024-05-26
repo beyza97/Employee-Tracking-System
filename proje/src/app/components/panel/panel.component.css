@@ -49,7 +49,6 @@ body {
 .card:hover .card-content {
     color: #007bff; 
 }
-
 .card .pi {
     font-size: 2.5rem;
     margin-bottom: 10px;
