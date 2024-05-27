@@ -126,8 +126,26 @@ body {
     padding: 2rem;
     margin: 2rem;
     max-width: 100%;
-    .chart-definition{
-    margin:2rem;
-    font-size: medium;
+ }
+ ::ng-deep .p-dialog.custom-dialog {
+    height: 70% !important;
+    width: 40% !important;
   }
+  
+  ::ng-deep .p-dialog .p-field {
+    margin-top: 1rem;
+  }
+  
+  ::ng-deep .p-calendar {
+    width: 16rem !important;
+    margin-right: 1rem;
+  }
+  
+  ::ng-deep .p-calendar .p-datepicker {
+    height: min-content !important;
+    min-height: 10rem !important;
+  }
+  .date{
+    display: flex;
+    flex-direction: row;
   }

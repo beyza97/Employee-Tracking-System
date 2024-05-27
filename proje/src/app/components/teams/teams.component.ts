@@ -9,8 +9,8 @@ import { DataService } from 'src/app/service/data/data.service';
   styleUrls: ['./teams.component.css'],
   providers: [MessageService]
 })
-export class TeamsComponent implements OnInit{
-  dashboardData:any;
+export class TeamsComponent implements OnInit {
+  dashboardData: any;
 
   topEmployeesChartData: any;
   pieChartOptions: any;
@@ -20,13 +20,16 @@ export class TeamsComponent implements OnInit{
   showEmployeeModal: boolean = false;
   teamOptions: string[] = [];
 
+  teamName: string = '';
+  description: string = '';
+
   constructor(
-    private dataService:DataService,
+    private dataService: DataService,
     private route: Router,
     private messageService: MessageService
-  ){}
-  ngOnInit() {
+  ) {}
 
+  ngOnInit() {
     this.dataService.getDashboardData().subscribe({
       next: (data) => {
         this.dashboardData = data.data;
@@ -37,8 +40,20 @@ export class TeamsComponent implements OnInit{
       }
     });
   }
+
   saveCourse() {
-    this.showCourseModal = false; 
+    this.showCourseModal = false;
     this.messageService.add({ severity: 'success', summary: 'Success', detail: 'New Team Request Created' });
+    this.resetForm();
+  }
+
+  resetForm() {
+    this.teamName = '';
+    this.description = '';
+  }
+
+  cancel() {
+    this.showCourseModal = false;
+    this.resetForm();
   }
 }

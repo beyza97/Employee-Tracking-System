@@ -10,6 +10,18 @@
     align-items: center;
 }
 
+.login-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.login-header .logo {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
 .login-card {
     padding: 20px;
     border-radius: 10px;
@@ -17,10 +29,6 @@
     background: white;
     width: 300px;
     text-align: center;
-}
-
-.login-card h2 {
-    margin-bottom: 20px;
 }
 
 .login-card input[type="text"],
@@ -43,13 +51,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 .login-card button:hover {
     background-color: #6dd5ed; 
 }
+
 .warning{
     margin-top: 1rem;
     font-size: 10px;
     font-weight: 600;
+}
+.header{
+ margin-left: 1rem;
 }

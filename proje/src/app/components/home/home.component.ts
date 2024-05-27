@@ -9,17 +9,17 @@ import { ToastModule } from 'primeng/toast';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   providers: [MessageService]
-
 })
-export class HomeComponent implements OnInit{
-  dashboardData:any;
+export class HomeComponent implements OnInit {
+  dashboardData: any;
+  
   constructor(
-    private dataService:DataService,
+    private dataService: DataService,
     private route: Router,
     private messageService: MessageService
-  ){}
+  ) {}
+  
   ngOnInit() {
-
     this.dataService.getDashboardData().subscribe({
       next: (data) => {
         this.dashboardData = data.data;
@@ -33,14 +33,24 @@ export class HomeComponent implements OnInit{
 
   goToMissionManage(event: Event) {
     event.preventDefault();
-
-  
     const form = document.getElementById('loginForm') as HTMLFormElement;
+    
     if (form.checkValidity()) {
-      this.route.navigate(['home/panel']);
-      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Mission managed successfully' });
+      this.messageService.add({ 
+        severity: 'success', 
+        summary: 'Success', 
+        detail: 'Login successful' 
+      });
+      
+      setTimeout(() => {
+        this.route.navigate(['home/panel']);
+      }, 500); 
     } else {
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please fill out all required fields. Please enter random input.' });
+      this.messageService.add({ 
+        severity: 'error', 
+        summary: 'Error', 
+        detail: 'Please fill out all required fields with random inputs' 
+      });
     }
   }
 }

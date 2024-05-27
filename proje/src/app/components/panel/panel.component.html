@@ -10,23 +10,26 @@
 <p-dialog header="Add New Course" [(visible)]="showCourseModal" [modal]="true" [closable]="false" styleClass="custom-dialog">
     <div class="p-fluid">
       <div class="p-field">
-        <label for="skill">Skill</label>
+        <label for="skill"><strong> Skill</strong></label>
         <p-dropdown [options]="skills" [(ngModel)]="selectedSkill" placeholder="Select a skill"></p-dropdown>
       </div>
-      <div class="p-field">
-        <label for="startDate">Start Date</label>
-        <p-calendar [(ngModel)]="startDate" placeholder="Start Date"></p-calendar>
+      <div class="date">
+        <div class="p-field">
+            <label for="startDate"><strong>Start Date</strong> </label>
+            <p-calendar [(ngModel)]="startDate" placeholder="Start Date"></p-calendar>
+          </div>
+          <div class="p-field">
+            <label for="dueDate"><strong>Due Date</strong> </label>
+            <p-calendar [(ngModel)]="dueDate" placeholder="Due Date"></p-calendar>
+          </div>
       </div>
+  
       <div class="p-field">
-        <label for="dueDate">Due Date</label>
-        <p-calendar [(ngModel)]="dueDate" placeholder="Due Date"></p-calendar>
-      </div>
-      <div class="p-field">
-        <label for="assignedEmployee">Assigned Employee</label>
+        <label for="assignedEmployee"><strong> Assigned Employee</strong></label>
         <input type="text" pInputText [(ngModel)]="assignedEmployee" placeholder="Assigned Employee" />
       </div>
       <div class="p-field">
-        <label for="numberOfExams">Number of Exams</label>
+        <label for="numberOfExams"><strong>Number of Exams</strong> </label>
         <input type="number" pInputText [(ngModel)]="numberOfExams" placeholder="Number of Exams" />
       </div>
     </div>
@@ -39,19 +42,19 @@
   <p-dialog header="Add New Employee" [(visible)]="showEmployeeModal" [modal]="true" [closable]="false" styleClass="custom-dialog">
     <div class="p-fluid">
       <div class="p-field">
-        <label>Employee Name</label>
+        <label><strong>Employee Name</strong></label>
         <input type="text" pInputText [(ngModel)]="employeeName" placeholder="Name" />
       </div>
       <div class="p-field">
-        <label>Employee Surname</label>
+        <label><strong>Surname</strong> </label>
         <input type="text" pInputText [(ngModel)]="employeeSurname" placeholder="Surname" />
       </div>
       <div class="p-field">
-        <label>Team</label>
+        <label><strong>Team</strong> </label>
         <p-dropdown [options]="teamOptions" [(ngModel)]="selectedTeam" placeholder="Select a team"></p-dropdown>
       </div>
       <div class="p-field">
-        <label>Employee Title</label>
+        <label><strong>Title</strong></label>
         <input type="text" pInputText [(ngModel)]="employeeTitle" placeholder="Employee Title" />
       </div>
     </div>

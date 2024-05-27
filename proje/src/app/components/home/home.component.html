@@ -1,18 +1,19 @@
-<p-toast />
 <p-toast position="top-right"></p-toast>
 <div class="page-div">
-    <div>
-        <div class="login-card">
-            <h2>Login</h2>
-            <form id="loginForm" (ngSubmit)="goToMissionManage($event)">
-                <input type="text" placeholder="Username" name="username" required>
-                <input type="password" placeholder="Password" name="password" required>
-                <button pButton class="button ml-2" type="submit">Login</button>
-            </form>
-            <p class="warning"> Username and password is required. Enter random Username and Password.</p>
-        </div>
+  <div>
+    <div class="login-card">
+      <div class="login-header">
+        <img src="assets/logo/logo_t.jpg" alt="Logo" class="logo">
+        <h2 class="header">Login</h2>
+      </div>
+      <form id="loginForm" (ngSubmit)="goToMissionManage($event)">
+        <input type="text" placeholder="Username" name="username" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <button pButton class="button ml-2" type="submit">Login</button>
+      </form>
+      <p class="warning">Username and password are required. Enter random Username and Password.</p>
     </div>
+  </div>
 </div>
-
 
 <router-outlet></router-outlet>
