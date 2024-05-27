@@ -1,8 +1,12 @@
 .card {
-    padding: 2rem;
-    margin: 2rem;
-    max-width: 70%;
+  padding: 2rem;
+  margin: 2rem;
+  max-width: 65%;
+  .chart-definition{
+  margin:2rem;
+  font-size: medium;
   }
+}
   .table-title{
     font-size: 20px;
     font-weight: 600;

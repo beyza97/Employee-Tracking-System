@@ -3,130 +3,131 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-}
-
-.p-grid {
+  }
+  
+  .p-grid {
     display: flex;
     flex-wrap: wrap;
     margin: 20px;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: stretch;
-}
-
-.p-col-12 {
+  }
+  
+  .p-col-12 {
     flex: 0 0 100%;
     max-width: 100%;
     box-sizing: border-box;
-}
-
-.p-col-12,
-.p-col-6,
-.p-col-3 {
-    padding: 0 15px;
-}
-
-.card {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.card:hover {
-    border-color: #007bff;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card-content {
-    transition: color 0.3s;
-}
-
-.card:hover .card-content {
-    color: #007bff; 
-}
-.card .pi {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    display: block;
-}
-.card:hover .pi {
-    color: #007bff; 
-}
-.card-content {
-    padding: 10px 0;
-}
-
-.card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.card-value {
-    font-size: 1.5rem;
-    color: #333;
-    font-weight: bold;
-}
-
-.card-value ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-.card-value ul li {
-    margin-bottom: 5px;
-}
-.title-setting{
-    font-size: 30px;
-    font-weight: 600;
-    margin: 2rem;
-    color: #617198;
-    display: flex;
-    justify-content: center;
-}
-.p-chart {
-    max-width: 100%;
-    height: auto;
-    max-height: 10px; 
+    padding: 1rem;
   }
   
-  @media (min-width: 768px) {
-    .p-col-12.p-md-6 {
-      flex: 0 0 50%; 
-      max-width: 35%; 
+  .p-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    box-sizing: border-box;
+    padding: 1rem;
   }
-} 
-::ng-deep .p-dialog {
-  width: 30% !important;
-  height: 60% !important;
-}
+  
+  .p-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+  }
 
-::ng-deep .p-button {
-  border-radius: 5px;
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+  
+  .card-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card-icon {
+    font-size: 2rem;
+  }
+  
+  .card p {
+    margin: 0;
+  }
+  
+  .top-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+  }
+  
+  .custom-dialog {
+    max-width: 50%;
+    max-height: 50%;
+  }
+  
+  .title-setting {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .cancel-button {
+    background-color: #f44336;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  ::ng-deep .bar-chart {
+    max-height: 2rem !important;
+  }
+::ng-deep.p-element.p-button.p-component{
+    margin-left: 0.5rem !important;
+    border-radius: 5px;
 }
-
-::ng-deep .p-dialog .p-field label {
-  margin-top: 1rem;
-}
-.button-container {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
-  margin-right: 2rem;
-}
-
-.button-container button {
-  margin-left: 1rem;
-}
-
-.cancel-button {
-  background-color: rgba(200, 60, 60, 0.849);
-  border-color: rgba(200, 60, 60, 0.764);
-}
+.cardd {
+    padding: 2rem;
+    margin: 2rem;
+    max-width: 100%;
+    .chart-definition{
+    margin:2rem;
+    font-size: medium;
+  }
+  }

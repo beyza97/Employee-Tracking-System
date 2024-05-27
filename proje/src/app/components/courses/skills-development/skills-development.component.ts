@@ -37,7 +37,16 @@ export class SkillsDevelopmentComponent implements OnInit {
         {
           label: 'Skills',
           backgroundColor: '#42A5F5',
-          data: employees
+          data: employees,
+          hoverBackgroundColor: '#FF6384',
+          hoverBorderColor: 'rgba(255,99,132,1)',
+          hoverBorderWidth: 1,
+          hoverLabel: {
+            display: true,
+            formatter: function(value: any, context: any) {
+              return 'employee: ' + value;
+            }
+          }
         }
       ]
     };
@@ -47,6 +56,15 @@ export class SkillsDevelopmentComponent implements OnInit {
         legend: {
           labels: {
             color: '#495057'
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context: any) {
+              const label = context.dataset.label || '';
+              const value = context.raw || 0;
+              return `employee: ${value}`;
+            }
           }
         }
       },

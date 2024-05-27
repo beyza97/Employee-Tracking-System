@@ -1,124 +1,118 @@
-<app-header></app-header> 
+<app-header></app-header>
 <p-toast position="top-right"></p-toast>
 
 <div class="button-container">
-    <button pButton type="button" label="Add New Course" icon="pi pi-plus" (click)="showCourseModal = true"></button>
-    <button pButton type="button" label="Add New Employee" icon="pi pi-plus" (click)="showEmployeeModal = true"></button>
+  <button pButton type="button" label="Add New Course" icon="pi pi-plus" (click)="openCourseModal()"></button>
+  <button pButton type="button" label="Add New Employee" icon="pi pi-plus" (click)="openEmployeeModal()"></button>
 </div>
 
-<p-dialog header="Add New Course" [(visible)]="showCourseModal" [modal]="true" [closable]="false" [styleClass]="'custom-dialog'">
-  <div class="p-fluid">
-    <div class="p-field">
-      <label for="skill">Skill</label>
-      <p-dropdown [options]="skills" [(ngModel)]="selectedSkill" placeholder="Select a skill"></p-dropdown>
-    </div>
-    <div class="p-field">
-      <label for="startDate">Start Date</label>
-      <p-calendar  placeholder="Start Date"></p-calendar>
-    </div>
-    <div class="p-field">
-      <label for="dueDate">Due Date</label>
-      <p-calendar  placeholder="Due Date"></p-calendar>
-    </div>
-    <div class="p-field">
-      <label for="assignedEmployee">Assigned Employee</label>
-      <input type="text" pInputText placeholder="Assigned Employee" />
-    </div>
-    <div class="p-field">
-      <label for="numberOfExams">Number of Exams</label>
-      <input type="number" pInputText placeholder="Number of Exams" />
-    </div>
-  </div>
-  <p-footer>
-    <button pButton type="button" label="Save" icon="pi pi-check" (click)="saveCourse()"></button>
-    <button pButton type="button" label="Cancel" icon="pi pi-times" (click)="showCourseModal = false" class="cancel-button"></button>
-  </p-footer>
-</p-dialog>
-<p-dialog header="Add New Employee" [(visible)]="showEmployeeModal" [modal]="true" [closable]="false" [styleClass]="'custom-dialog'">
+
+<p-dialog header="Add New Course" [(visible)]="showCourseModal" [modal]="true" [closable]="false" styleClass="custom-dialog">
     <div class="p-fluid">
-        <div class="p-field">
-            <label>Employee Name</label>
-            <input type="text" pInputText placeholder="Name" />
-        </div>
-        <div class="p-field">
-            <label >Employee Surname</label>
-            <input type="text" pInputText placeholder="Surname" />
-        </div>
-        <div class="p-field">
-            <label >Team</label>
-            <p-dropdown [options]="teamOptions" placeholder="Select a team"></p-dropdown>
-        </div>
-        <div class="p-field">
-            <label>Employee Title</label>
-            <input type="text" pInputText placeholder="Employee Title" />
-        </div>
+      <div class="p-field">
+        <label for="skill">Skill</label>
+        <p-dropdown [options]="skills" [(ngModel)]="selectedSkill" placeholder="Select a skill"></p-dropdown>
+      </div>
+      <div class="p-field">
+        <label for="startDate">Start Date</label>
+        <p-calendar [(ngModel)]="startDate" placeholder="Start Date"></p-calendar>
+      </div>
+      <div class="p-field">
+        <label for="dueDate">Due Date</label>
+        <p-calendar [(ngModel)]="dueDate" placeholder="Due Date"></p-calendar>
+      </div>
+      <div class="p-field">
+        <label for="assignedEmployee">Assigned Employee</label>
+        <input type="text" pInputText [(ngModel)]="assignedEmployee" placeholder="Assigned Employee" />
+      </div>
+      <div class="p-field">
+        <label for="numberOfExams">Number of Exams</label>
+        <input type="number" pInputText [(ngModel)]="numberOfExams" placeholder="Number of Exams" />
+      </div>
     </div>
     <p-footer>
-        <button pButton type="button" label="Save" icon="pi pi-check" (click)="saveEmployee()"></button>
-        <button pButton type="button" label="Cancel" icon="pi pi-times" (click)="showEmployeeModal = false" class="cancel-button"></button>
-      </p-footer>
-</p-dialog>
-
+      <button pButton type="button" label="Save" icon="pi pi-check" (click)="saveCourse()"></button>
+      <button pButton type="button" label="Cancel" icon="pi pi-times" (click)="showCourseModal = false" class="cancel-button"></button>
+    </p-footer>
+  </p-dialog>
+  
+  <p-dialog header="Add New Employee" [(visible)]="showEmployeeModal" [modal]="true" [closable]="false" styleClass="custom-dialog">
+    <div class="p-fluid">
+      <div class="p-field">
+        <label>Employee Name</label>
+        <input type="text" pInputText [(ngModel)]="employeeName" placeholder="Name" />
+      </div>
+      <div class="p-field">
+        <label>Employee Surname</label>
+        <input type="text" pInputText [(ngModel)]="employeeSurname" placeholder="Surname" />
+      </div>
+      <div class="p-field">
+        <label>Team</label>
+        <p-dropdown [options]="teamOptions" [(ngModel)]="selectedTeam" placeholder="Select a team"></p-dropdown>
+      </div>
+      <div class="p-field">
+        <label>Employee Title</label>
+        <input type="text" pInputText [(ngModel)]="employeeTitle" placeholder="Employee Title" />
+      </div>
+    </div>
+    <p-footer>
+      <button pButton type="button" label="Save" icon="pi pi-check" (click)="saveEmployee()"></button>
+      <button pButton type="button" label="Cancel" icon="pi pi-times" (click)="showEmployeeModal = false" class="cancel-button"></button>
+    </p-footer>
+  </p-dialog>
 
 <p class="title-setting">General Situation</p>
 <div class="p-grid">
-<div class="p-col-12 p-md-6 p-lg-3" *ngIf="dashboardData && dashboardData.top_employees">
+  <div class="p-col-3 p-md-6 p-lg-3 card-container" *ngIf="dashboardData && dashboardData.top_employees">
     <div class="card">
-        <span class="pi pi-star"></span>
-        <div class="card-content">
-            <div class="card-title">Best Employees</div>
-            <div class="card-value">
-                <p-chart type="pie" [data]="topEmployeesChartData" [options]="pieChartOptions"></p-chart>
-            </div>
+      <span class="pi pi-star"></span>
+      <div class="card-content">
+        <div class="card-title">Best Employees</div>
+        <div class="card-value">
+          <p-chart type="pie" [data]="topEmployeesChartData" [options]="pieChartOptions"></p-chart>
         </div>
+      </div>
     </div>
-</div>
-    <div class="p-col-12 p-md-6 p-lg-3">
-        
+  </div>
+  <div class="p-col-3 p-md-6 p-lg-6" *ngIf="dashboardData && dashboardData.top_employees">
+      <div class="card">
+        <span class="pi pi-star"></span>
+        <div class="card-title">Top Skills</div>
+          <div class="cardd">
+            <p-chart type="bar" [data]="basicData" [options]="basicOptions">    </p-chart>
+          </div>
+      </div>
+    <div>
+    </div>
+  </div>
+  <div class="p-col-3 p-md-6 p-lg-3 card-container top-infos">
+    <div class="card">
         <div class="card">
             <div>
-                <span class="pi pi-book"></span>
+              <span class="pi pi-book"></span>
             </div>
-            
             <div class="card-content">
-                <div class="card-title">Total Completed Courses</div>
-                <div class="card-value">{{ dashboardData?.total_completed_courses }}</div>
+              <div class="card-title">Total Completed Courses</div>
+              <div class="card-value">{{ dashboardData?.total_completed_courses }}</div>
             </div>
-        </div>
-        <div class="card">
+          </div>
+          <div class="card">
             <span class="pi pi-chart-bar"></span>
             <div class="card-content">
-                <div class="card-title">Average Employee Score</div>
-                <div class="card-value">{{ dashboardData?.average_employee_score }}</div>
+              <div class="card-title">Average Employee Score</div>
+              <div class="card-value">{{ dashboardData?.average_employee_score }}</div>
             </div>
-        </div>
-        <div class="card">
-                <span class="pi pi-users"></span>
-                <div class="card-content">
-                    <div class="card-title">Total Number of Employees</div>
-                    <div class="card-value">{{ dashboardData?.total_employees }}</div>
-                </div>
-        </div>
- 
-    </div>
-   
-
-</div>
-<div class="p-grid">
-    <div class="p-col-12 p-md-6 p-lg-3" *ngIf="dashboardData && dashboardData.top_employees">
-        <div class="card">
-            <span class="pi pi-star"></span>
+          </div>
+          <div class="card">
+            <span class="pi pi-users"></span>
             <div class="card-content">
-                <div class="card-title">Top Skills</div>
-                <div class="card-value">
-                    <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
-                </div>
+              <div class="card-title">Total Number of Employees</div>
+              <div class="card-value">{{ dashboardData?.total_employees }}</div>
             </div>
-        </div>
+          </div>
     </div>
-
-</div>
-
-<div>
-    <app-footer></app-footer>
   </div>
+</div>
+<div>
+  <app-footer></app-footer>
+</div>
